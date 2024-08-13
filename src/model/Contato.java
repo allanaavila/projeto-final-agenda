@@ -1,5 +1,7 @@
 package model;
 
+import static java.lang.StringTemplate.STR;
+
 public class Contato {
     String nome;
     String sobrenome;
@@ -11,6 +13,18 @@ public class Contato {
         this.sobrenome = sobrenome;
         this.email = email;
         this.telefone = telefone;
+    }
+
+    @Override
+    public String toString() {
+        return STR."""
+                ############################
+                ##### DADOS DO CONTATO #####
+                ############################
+                Nome: \{nome} \{sobrenome}
+                Telefone: \{telefone}
+                E-mail: \{email}
+                """;
     }
 
     public String getNome() {
