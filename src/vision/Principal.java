@@ -16,20 +16,17 @@ public class Principal {
         var opcao = -1;
 
         while (opcao != 0) {
-            var menu = """
-                    
-                    ========== AGENDA ==========
-                    
-                    1 - Adicionar contatos
-                    2 - Detalhar contatos
-                    3 - Alterar contatos
-                    4 - Excluir contatos
-                    5 - Listar todos contatos
-                    
-                    0 - Sair
-                    
-                    ============================
-                    """;
+            var menu = "\n╔══════════════════════════════╗\n"
+                    + "║          AGENDA              ║\n"
+                    + "╠══════════════════════════════╣\n"
+                    + "║  1 - Adicionar contatos      ║\n"
+                    + "║  2 - Detalhar contatos       ║\n"
+                    + "║  3 - Alterar contatos        ║\n"
+                    + "║  4 - Excluir contatos        ║\n"
+                    + "║  5 - Listar todos contatos   ║\n"
+                    + "╠══════════════════════════════╣\n"
+                    + "║  0 - Sair                    ║\n"
+                    + "╚══════════════════════════════╝\n";
 
             System.out.println("\nEscolha a opção deseja: \n" + menu);
             System.out.println("Digite a opção: ");
