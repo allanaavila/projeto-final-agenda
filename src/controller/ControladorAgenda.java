@@ -108,13 +108,31 @@ public class ControladorAgenda {
         }
     }
 
+
+    public void listarTodosContatos() {
+        if (contatos.length == 0) {
+            System.out.println("Nenhum contato cadastrado!");
+        } else {
+            System.out.println("========================== TODOS CONTATOS ==========================");
+            System.out.printf("%-4s %-20s %-30s %-15s\n", "ID", "Nome", "E-mail", "Telefone");
+            for (int i = 0; i < contatos.length; i++) {
+                Contato contato = contatos[i];
+                System.out.printf("%-4d %-20s %-30s %-15s\n",
+                        i + 1,
+                        contato.getNome() + " " + contato.getSobrenome(),
+                        contato.getEmail(),
+                        contato.getTelefone());
+                System.out.println("---------------------------------------------------------------------");
+            }
+        }
+    }
+
     public void alterarContato(String telefoneAntigo, Contato contatoAtualizado) throws Exception {
         try {
             if (!telefoneAntigo.equals(contatoAtualizado.getTelefone()) &&
                     consultarTelefoneExistente(contatoAtualizado.getTelefone())) {
                 throw new TelefoneExistenteException();
             }
-
 
             Contato contatoEncontrado = buscarContatoPorTelefone(telefoneAntigo);
 
@@ -140,21 +158,4 @@ public class ControladorAgenda {
     }
 
 
-    public void listarTodosContatos() {
-        if (contatos.length == 0) {
-            System.out.println("Nenhum contato cadastrado!");
-        } else {
-            System.out.println("========================== TODOS CONTATOS ==========================");
-            System.out.printf("%-4s %-20s %-30s %-15s\n", "ID", "Nome", "E-mail", "Telefone");
-            for (int i = 0; i < contatos.length; i++) {
-                Contato contato = contatos[i];
-                System.out.printf("%-4d %-20s %-30s %-15s\n",
-                        i + 1,
-                        contato.getNome() + " " + contato.getSobrenome(),
-                        contato.getEmail(),
-                        contato.getTelefone());
-                System.out.println("---------------------------------------------------------------------");
-            }
-        }
-    }
 }
