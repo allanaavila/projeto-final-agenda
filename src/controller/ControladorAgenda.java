@@ -109,4 +109,58 @@ public class ControladorAgenda {
             }
         }
     }
+    public void alterarContato(String telefoneAntigo, Contato contatoAtualizado) throws Exception {
+        try {
+            // Verifica se o novo telefone já está em uso
+            if (!telefoneAntigo.equals(contatoAtualizado.getTelefone()) &&
+                    consultarTelefoneExistente(contatoAtualizado.getTelefone())) {
+                throw new TelefoneExistenteException();
+            }
+
+            // Busca o contato a ser alterado
+            Contato contatoEncontrado = buscarContatoPorTelefone(telefoneAntigo);
+
+            // Atualiza os dados do contato
+            int index = encontrarIndiceContato(telefoneAntigo);
+            contatos[index] = contatoAtualizado;
+
+        } catch (ContatoNaoEncontradoException e) {
+            throw e;
+        } catch (TelefoneExistenteException e) {
+            throw e;
+        }
+    }
+
+    private int encontrarIndiceContato(String telefone) throws ContatoNaoEncontradoException {
+        if (contatos != null) {
+            for (int i = 0; i < contatos.length; i++) {
+                if (contatos[i].getTelefone().equals(telefone)) {
+                    return i;
+                }
+            }
+        }
+        throw new ContatoNaoEncontradoException();
+    }
+
+
+    public void removerContato(String telefone) throws Exception {
+        try {
+            // Busca o contato a ser removido
+            int index = encontrarIndiceContato(telefone);
+
+            // Cria um novo array sem o contato removido
+            Contato[] novosContatos = new Contato[contatos.length - 1];
+            for (int i = 0, j = 0; i < contatos.length; i++) {
+                if (i != index) {
+                    novosContatos[j++] = contatos[i];
+                }
+            }
+            contatos = novosContatos;
+
+        } catch (ContatoNaoEncontradoException e) {
+            throw e;
+        }
+    }
+
+
 }

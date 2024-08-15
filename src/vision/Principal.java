@@ -1,6 +1,7 @@
 package vision;
 
 import controller.ControladorAgenda;
+import exception.ContatoNaoEncontradoException;
 import exception.TelefoneExistenteException;
 import model.Contato;
 import util.Util;
@@ -44,10 +45,10 @@ public class Principal {
                     detalharContatos();
                     break;
                 case 3:
-                   // alterarContatos();
+                    alterarContato();
                     break;
                 case 4:
-                   // excluirContatos();
+                    excluirContato();
                     break;
                 case 5:
                     listarTodosContatos();
@@ -98,6 +99,36 @@ public class Principal {
 
     private void listarTodosContatos() {
         controladorAgenda.listarTodosContatos();
+        perguntarMenuOuSair();
+    }
+
+    private void alterarContato() {
+        String telefoneAntigo = Util.ler(leitura, "Digite o telefone do contato a ser alterado: ");
+        Contato contatoAtualizado = obterDadosContato();
+        try {
+            controladorAgenda.alterarContato(telefoneAntigo, contatoAtualizado);
+            System.out.println("Contato atualizado com sucesso!");
+        } catch (TelefoneExistenteException e) {
+            Util.erro(e.getMessage());
+        } catch (ContatoNaoEncontradoException e) {
+            Util.erro(e.getMessage());
+        } catch (Exception e) {
+            Util.erro("Erro inesperado: " + e.getMessage());
+        }
+        perguntarMenuOuSair();
+    }
+
+
+    private void excluirContato() {
+        String telefone = Util.ler(leitura, "Digite o telefone do contato a ser excluído: ");
+        try {
+            controladorAgenda.removerContato(telefone);
+            System.out.println("Contato excluído com sucesso!");
+        } catch (ContatoNaoEncontradoException e) {
+            Util.erro(e.getMessage());
+        } catch (Exception e) {
+            Util.erro("Erro inesperado: " + e.getMessage());
+        }
         perguntarMenuOuSair();
     }
 
