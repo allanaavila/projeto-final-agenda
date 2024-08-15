@@ -17,17 +17,17 @@ public class Principal {
 
         while (opcao != 0) {
             var menu = """
-                                        
+
                     ========== AGENDA ==========
-                                        
+
                     1 - Adicionar contatos
                     2 - Detalhar contatos
                     3 - Alterar contatos
                     4 - Excluir contatos
                     5 - Listar todos contatos
-                                        
+
                     0 - Sair
-                                        
+
                     ============================
                     """;
 
@@ -50,7 +50,7 @@ public class Principal {
                     // excluirContatos();
                     break;
                 case 5:
-                    //listarTodosContatos();
+                    // listarTodosContatos();
                     break;
                 case 0:
                     System.out.println("Saindo....");
@@ -151,12 +151,11 @@ public class Principal {
         throw new ContatoNaoEncontradoException();
     }
 
-
     private void perguntarMenuOuSair() {
         String resposta = Util.ler(leitura, "\nDeseja voltar ao menu ou sair? (menu/sair): ");
         if (resposta.equalsIgnoreCase("sair")) {
             System.out.println("Saindo....");
-            System.exit(0);  //encerra o programa
+            System.exit(0); // encerra o programa
         }
     }
 }
