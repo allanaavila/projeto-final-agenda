@@ -121,7 +121,7 @@ public class Principal {
     }
 
     private void detalharContatos() {
-        String telefone = Util.ler(leitura, "Digite o telefone do contato: ");
+        String telefone = Util.ler(leitura, "Digite o novo telefone do contato: ");
         controladorAgenda.detalharContatos(telefone);
         perguntarMenuOuSair();
     }
