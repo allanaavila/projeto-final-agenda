@@ -2,7 +2,7 @@
 # Agenda Contato
 ## Alunos:
     Alana Sampaio Pinto
-        . https://github.com/AlanaSampaio
+        . <a href="https://github.com/AlanaSampaio">Alana Sampaio</a> 
 
     Allana Cristina Diniz Mendes de Ávila
         . https://github.com/allanaavila
