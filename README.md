@@ -1,25 +1,21 @@
 
 # Agenda Contato
 ## Alunos:
-    Alana Sampaio Pinto
-        . https://github.com/AlanaSampaio
 
-    Allana Cristina Diniz Mendes de Ávila
-        . https://github.com/allanaavila
+<a href="https://github.com/AlanaSampaio">Alana Sampaio</a> 
 
-    Luiz Otávio Ferreira
-        . https://github.com/dev-luizotavio
+<a href="https://github.com/allanaavila">Allana Ávila</a> 
 
-    Matheus Toscano Vidal
-        . https://github.com/toscanomatheus
+<a href="https://github.com/dev-luizotavio">Luiz Otávio Ferreira</a> 
 
-    Marina Guimarães Vieira
-        . https://github.com/marinagv95
+<a href="https://github.com/toscanomatheus"> Matheus Toscano Vidal</a> 
+
+<a href="https://github.com/marinagv95">Marina Guimarães Vieira</a> 
     
-
 
 ## Link do Repositório:
     https://github.com/allanaavila/projeto-final-agenda/tree/main
+
 
 
 Este projeto é uma aplicação em Java que simula uma agenda de contatos. A aplicação permite adicionar, detalhar, alterar, excluir e listar contatos, oferecendo uma interface simples para o gerenciamento dos dados.
